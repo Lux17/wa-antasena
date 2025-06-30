@@ -69,11 +69,11 @@ client.on('message', async message => {
         if (lowerText === 'list') {
             pesan =`Hi ${mentionTag},\n \n ${waktu} \n ${harga}`;
         } 
-        else if (lowerText === 'morning all') {
-            pesan =`Hi Member,\n \n ${harga}`;
+        else if (lowerText === 'morning') {
+            pesan =`${harga}`;
         }
-        else if (lowerText === 'night all') {
-            pesan =`Hi Member,\n  \n ${harga}`;
+        else if (lowerText === 'night') {
+            pesan =`${harga}`;
         }
         else if (lowerText === 'tutor') {
             pesan =`Hi ${mentionTag},\n \n ${harga}`;
@@ -88,8 +88,8 @@ client.on('message', async message => {
             pesan =` ${harga}\n \n 📆 TANGGAL : ${waktu}`;
         }
         else if (lowerText === 'payment') {
-            if (fs.existsSync('./images/payment.jpg')) {
-            const media = MessageMedia.fromFilePath('./images/payment.jpg');
+            if (fs.existsSync('./images/payments.jpeg')) {
+            const media = MessageMedia.fromFilePath('./images/payments.jpeg');
             await client.sendMessage(message.from, media);
             }
             pesan =`${mentionTag},${harga}`;
